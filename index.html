@@ -125,7 +125,7 @@
         console.log($('.placeholder').attr('data-mnpath'));
 
         setTimeout(function () {
-            //window.location.href = $('.placeholder').attr('data-mnpath');
+            window.location.href = $('.placeholder').attr('data-mnpath');
         }, 400);
     }
 </script>
@@ -153,6 +153,7 @@
         font-size: 60px;
         font-family: 'Ubuntu', sans-serif;
     }
+
     button {
         color: white;
         background-color: #f000f0;
@@ -165,12 +166,14 @@
         transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         margin-bottom: 10px;
     }
+
     button:hover, button.active {
         background-color: #ff4fff;
         box-shadow: 0 0 2px #2b002b, 0 0 25px #c0c, 0 0 5px #f0f;
         text-shadow: 0 0 2px #2b002b;
         color: white;
     }
+
     .intro {
         margin: auto;
         width: 40%;
