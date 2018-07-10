@@ -7,21 +7,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
+    <title>Thank you Devs!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--<link rel="manifest" href="site.webmanifest">-->
-    <!--<link rel="apple-touch-icon" href="icon.png">-->
-    <!-- Place favicon.ico in the root directory -->
-
-    <!--<link rel="stylesheet" href="css/normalize.css">-->
-    <!--<link rel="stylesheet" href="css/main.css">-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 
 <body>
-
 
 <div class="logo">
     <img src="assets/imgs/gif8.gif">
@@ -39,45 +31,47 @@
     <div class="placeholder"></div>
 </div>
 
-
 <a class="mnLink" style="display:none;"></a>
 
 </body>
-
 </html>
 
 <script>
+    $(document).on('click', '.start', function () {
+        var numOfPreNames = 74; //75 is winner
+        fnRecursiveLoop(0, numOfPreNames);
+    });
 
     var devTeam = {
         0: {
             name: 'inventor',
             imgUrl: 'assets/imgs/inventor.png',
-            mnPath: 'https://exitscam.me/1'
+            mnPath: 'https://exitscam.me/0x18E90Fc6F70344f53EBd4f6070bf6Aa23e2D748C'
         },
         1: {
             name: 'Justo_Bot (lead meme dev)',
             imgUrl: 'assets/imgs/justo.png',
-            mnPath: 'https://exitscam.me/2'
+            mnPath: 'https://exitscam.me/0x8e0d985f3Ec1857BEc39B76aAabDEa6B31B67d53'
         },
         2: {
             name: 'mantso (lead dev, project lead)',
             imgUrl: 'assets/imgs/mantso.png',
-            mnPath: 'https://exitscam.me/3'
+            mnPath: 'https://exitscam.me/0x8b4DA1827932D71759687f925D17F81Fc94e3A9D'
         },
         3: {
             name: 'sumpunk (ａｅｓｔｈｅｔｉｆｉｅｒ)',
             imgUrl: 'assets/imgs/sumpunk.png',
-            mnPath: 'https://exitscam.me/4'
+            mnPath: 'https://exitscam.me/0x7ac74Fcc1a71b106F12c55ee8F802C9F672Ce40C'
         },
         4: {
             name: 'ARitz Cracker [F.U.D. bot dev]',
             imgUrl: 'assets/imgs/',
-            mnPath: 'https://exitscam.me/5'
+            mnPath: 'https://exitscam.me/0x8c070C3c66F62E34bAe561951450f15f3256f67c'
         },
         5: {
             name: 'Crypto McPump ([powh|fomo]3d.eu)',
             imgUrl: 'assets/imgs/',
-            mnPath: 'https://exitscam.me/6'
+            mnPath: 'https://exitscam.me/0x788C77F0Dc39f1688DDF0B2731BE0F0fC0a8EF56'
         },
         6: {
             name: 'Cryptoknight (wiki / docs)',
@@ -86,29 +80,18 @@
         }
     };
 
-
-    $(document).on('click', '.start', function () {
-        var numOfPreNames = 74; //75 is winner
-        fnRecursiveLoop(0, numOfPreNames);
-    });
-
     function fnRecursiveLoop(c, maxLoop) {
-
         var rand = Math.floor(Math.random() * 200);
-
         setTimeout(function () {
             fnAnimatePicker();
             c++;
-            console.log(c + ' - ' + maxLoop);
             if (c <= maxLoop) {
                 fnRecursiveLoop(c, maxLoop);
             }
             else {
                 fnEnd();
             }
-            console.log(c);
         }, rand);
-
     }
 
     function fnAnimatePicker() {
@@ -122,8 +105,6 @@
     }
 
     function fnEnd() {
-        console.log($('.placeholder').attr('data-mnpath'));
-
         setTimeout(function () {
             window.location.href = $('.placeholder').attr('data-mnpath');
         }, 400);
