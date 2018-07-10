@@ -1,0 +1,206 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--<link rel="manifest" href="site.webmanifest">-->
+    <!--<link rel="apple-touch-icon" href="icon.png">-->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<body>
+
+
+<div class="logo">
+    <img src="assets/imgs/gif8.gif">
+</div>
+
+<h1>F3D Developer Payback Fund</h1>
+
+<div class="intro">
+    Thank the creators of the best DAPPS on the ETH Network. <br/>This will randomly pick one of the seven developer
+    referral links.
+</div>
+
+<div class="roulette">
+    <button type="button" class="start">Find Random Developer</button>
+    <div class="placeholder"></div>
+</div>
+
+
+<a class="mnLink" style="display:none;"></a>
+
+</body>
+
+</html>
+
+<script>
+
+    var devTeam = {
+        0: {
+            name: 'inventor',
+            imgUrl: 'assets/imgs/inventor.png',
+            mnPath: 'https://exitscam.me/1'
+        },
+        1: {
+            name: 'Justo_Bot (lead meme dev)',
+            imgUrl: 'assets/imgs/justo.png',
+            mnPath: 'https://exitscam.me/2'
+        },
+        2: {
+            name: 'mantso (lead dev, project lead)',
+            imgUrl: 'assets/imgs/mantso.png',
+            mnPath: 'https://exitscam.me/3'
+        },
+        3: {
+            name: 'sumpunk (ａｅｓｔｈｅｔｉｆｉｅｒ)',
+            imgUrl: 'assets/imgs/sumpunk.png',
+            mnPath: 'https://exitscam.me/4'
+        },
+        4: {
+            name: 'ARitz Cracker [F.U.D. bot dev]',
+            imgUrl: 'assets/imgs/',
+            mnPath: 'https://exitscam.me/5'
+        },
+        5: {
+            name: 'Crypto McPump ([powh|fomo]3d.eu)',
+            imgUrl: 'assets/imgs/',
+            mnPath: 'https://exitscam.me/6'
+        },
+        6: {
+            name: 'Cryptoknight (wiki / docs)',
+            imgUrl: 'assets/imgs/',
+            mnPath: 'https://exitscam.me/0x172F820De0db7E26a5E7a70D322409199e2BFDED'
+        }
+    };
+
+
+    $(document).on('click', '.start', function () {
+        var numOfPreNames = 74; //75 is winner
+        fnRecursiveLoop(0, numOfPreNames);
+    });
+
+    function fnRecursiveLoop(c, maxLoop) {
+
+        var rand = Math.floor(Math.random() * 200);
+
+        setTimeout(function () {
+            fnAnimatePicker();
+            c++;
+            console.log(c + ' - ' + maxLoop);
+            if (c <= maxLoop) {
+                fnRecursiveLoop(c, maxLoop);
+            }
+            else {
+                fnEnd();
+            }
+            console.log(c);
+        }, rand);
+
+    }
+
+    function fnAnimatePicker() {
+        var rand = fnRandomIndex();
+        $('.placeholder').text(devTeam[rand].name).attr('data-mnpath', devTeam[rand].mnPath);
+        console.log(devTeam[rand]);
+    }
+
+    function fnRandomIndex() {
+        return Object.keys(devTeam)[Math.floor(Math.random() * Object.keys(devTeam).length)];
+    }
+
+    function fnEnd() {
+        console.log($('.placeholder').attr('data-mnpath'));
+
+        setTimeout(function () {
+            //window.location.href = $('.placeholder').attr('data-mnpath');
+        }, 400);
+    }
+</script>
+
+<style>
+    body, html {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        color: rgb(248, 249, 250);
+    }
+
+    body {
+        background-image: url("assets/imgs/purple_bg.jpg");
+    }
+
+    .roulette {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        top: 7%;
+        font-size: 60px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    button {
+        color: white;
+        background-color: #f000f0;
+        width: 40%;
+        height: 50px;
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        margin-bottom: 10px;
+    }
+    button:hover, button.active {
+        background-color: #ff4fff;
+        box-shadow: 0 0 2px #2b002b, 0 0 25px #c0c, 0 0 5px #f0f;
+        text-shadow: 0 0 2px #2b002b;
+        color: white;
+    }
+    .intro {
+        margin: auto;
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        top: 2%;
+        font-size: 20px;
+    }
+
+    h1 {
+        margin: auto;
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .mnLink {
+        display: block;
+        margin: auto;
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        top: 2%;
+        color: #f000f0;
+        font-size: 32px;
+    }
+</style>
