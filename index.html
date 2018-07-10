@@ -105,9 +105,10 @@
     }
 
     function fnEnd() {
+        $("<br/><br/><br/><div class=\"intro\">Redirecting to " + $('.placeholder').text() + "'s link.</div>").insertAfter('.roulette');
         setTimeout(function () {
             window.location.href = $('.placeholder').attr('data-mnpath');
-        }, 400);
+        }, 1000);
     }
 </script>
 
